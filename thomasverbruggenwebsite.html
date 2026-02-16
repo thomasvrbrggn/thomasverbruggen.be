@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thomas Verbruggen</title>
+  <link rel="stylesheet" href="https://use.typekit.net/eyh2obc.css" />
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #0c0c0c;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card {
+      text-align: center;
+      opacity: 0;
+      animation: appear 1s ease forwards;
+      animation-delay: 0.15s;
+    }
+
+    .name,
+    .row {
+      display: block;
+      font-family: "neue-kabel", sans-serif;
+      font-weight: 900;
+      font-size: clamp(2.4rem, 6.5vw, 5.2rem);
+      text-transform: uppercase;
+      color: #f7f5e6;
+      letter-spacing: -0.05em;
+      line-height: 1.0;
+    }
+
+    .name {
+      margin-bottom: -0.02em;
+      cursor: default;
+      display: block;
+    }
+
+    .name span::after {
+      content: ' ';
+    }
+
+    .name span:last-child::after {
+      content: '';
+    }
+
+    .row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .sep {
+      font-family: "neue-kabel", sans-serif;
+      font-weight: 100;
+      font-size: clamp(2.4rem, 6.5vw, 5.2rem);
+      color: #f7f5e6;
+      letter-spacing: -0.05em;
+      line-height: 1.0;
+      margin: 0 0.18em;
+      user-select: none;
+    }
+
+    .televisie,
+    .video {
+      font-family: "neue-kabel", sans-serif;
+      font-weight: 900;
+      font-size: clamp(2.4rem, 6.5vw, 5.2rem);
+      text-transform: uppercase;
+      letter-spacing: -0.05em;
+      line-height: 1.0;
+      color: #f7f5e6;
+      transition: color 0.18s ease;
+      cursor: default;
+    }
+
+    .televisie:hover { color: #e74526; }
+    .video:hover     { color: #afa836; }
+
+    a {
+      color: #f7f5e6;
+      text-decoration: none;
+      font-family: "neue-kabel", sans-serif;
+      font-weight: 900;
+      font-size: clamp(2.4rem, 6.5vw, 5.2rem);
+      text-transform: uppercase;
+      letter-spacing: -0.05em;
+      line-height: 1.0;
+      transition: color 0.18s ease;
+    }
+
+    a.televisie:hover { color: #e74526; }
+    a.video:hover     { color: #afa836; }
+    a.contact:hover   { color: #e0a442; }
+    a.instagram:hover { color: #97b8db; }
+
+    @media (max-width: 600px) {
+      .name {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .row {
+        flex-direction: column;
+        gap: 0;
+      }
+
+      .sep {
+        display: none;
+      }
+    }
+
+    @keyframes appear {
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="name"><span>Thomas</span><span>Verbruggen</span></div>
+    <div class="row">
+      <span class="televisie">Televisie</span>
+      <span class="sep">—</span>
+      <span class="video">Video</span>
+    </div>
+    <div class="row">
+      <a class="contact" href="mailto:hallo@thomasverbruggen.be">Contact</a>
+      <span class="sep">—</span>
+      <a class="instagram" href="https://www.instagram.com/thomasverbruggen/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+</body>
+</html>
