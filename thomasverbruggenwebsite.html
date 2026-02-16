@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Thomas Verbruggen</title>
   <link rel="stylesheet" href="https://use.typekit.net/eyh2obc.css" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="favicon.svg" />
 
   <style>
     *, *::before, *::after {
@@ -28,91 +30,78 @@
       animation-delay: 0.15s;
     }
 
+    /* Shared text style */
     .name,
-    .row {
-      display: block;
+    .word,
+    .sep,
+    a {
       font-family: "neue-kabel", sans-serif;
-      font-weight: 900;
       font-size: clamp(2.4rem, 6.5vw, 5.2rem);
       text-transform: uppercase;
-      color: #f7f5e6;
       letter-spacing: -0.05em;
       line-height: 1.0;
+      color: #f7f5e6;
     }
 
+    /* Name */
     .name {
-      margin-bottom: -0.02em;
-      cursor: default;
       display: block;
+      font-weight: 900;
+      cursor: default;
+      margin-bottom: -0.02em;
     }
 
-    .name span::after {
+    .name .first::after {
       content: ' ';
     }
 
-    .name span:last-child::after {
-      content: '';
-    }
-
+    /* Row */
     .row {
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
+    /* Separator — in Thin */
     .sep {
-      font-family: "neue-kabel", sans-serif;
       font-weight: 100;
-      font-size: clamp(2.4rem, 6.5vw, 5.2rem);
-      color: #f7f5e6;
-      letter-spacing: -0.05em;
-      line-height: 1.0;
       margin: 0 0.18em;
       user-select: none;
     }
 
-    .televisie,
-    .video {
-      font-family: "neue-kabel", sans-serif;
+    /* Plain words (no link) */
+    .word {
       font-weight: 900;
-      font-size: clamp(2.4rem, 6.5vw, 5.2rem);
-      text-transform: uppercase;
-      letter-spacing: -0.05em;
-      line-height: 1.0;
-      color: #f7f5e6;
-      transition: color 0.18s ease;
       cursor: default;
-    }
-
-    .televisie:hover { color: #e74526; }
-    .video:hover     { color: #afa836; }
-
-    a {
-      color: #f7f5e6;
-      text-decoration: none;
-      font-family: "neue-kabel", sans-serif;
-      font-weight: 900;
-      font-size: clamp(2.4rem, 6.5vw, 5.2rem);
-      text-transform: uppercase;
-      letter-spacing: -0.05em;
-      line-height: 1.0;
       transition: color 0.18s ease;
     }
 
-    a.televisie:hover { color: #e74526; }
-    a.video:hover     { color: #afa836; }
+    .word.televisie:hover { color: #e74526; }
+    .word.video:hover     { color: #afa836; }
+
+    /* Links */
+    a {
+      font-weight: 900;
+      text-decoration: none;
+      transition: color 0.18s ease;
+    }
+
     a.contact:hover   { color: #e0a442; }
     a.instagram:hover { color: #97b8db; }
 
+    /* Mobile */
     @media (max-width: 600px) {
       .name {
         display: flex;
         flex-direction: column;
       }
 
+      .name .first::after {
+        content: '';
+      }
+
       .row {
         flex-direction: column;
-        gap: 0;
       }
 
       .sep {
@@ -127,17 +116,23 @@
 </head>
 <body>
   <div class="card">
-    <div class="name"><span>Thomas</span><span>Verbruggen</span></div>
-    <div class="row">
-      <span class="televisie">Televisie</span>
-      <span class="sep">—</span>
-      <span class="video">Video</span>
+
+    <div class="name">
+      <span class="first">Thomas</span><span>Verbruggen</span>
     </div>
+
+    <div class="row">
+      <span class="word televisie">Televisie</span>
+      <span class="sep">&#8212;</span>
+      <span class="word video">Video</span>
+    </div>
+
     <div class="row">
       <a class="contact" href="mailto:hallo@thomasverbruggen.be">Contact</a>
-      <span class="sep">—</span>
+      <span class="sep">&#8212;</span>
       <a class="instagram" href="https://www.instagram.com/thomasverbruggen/" target="_blank" rel="noopener">Instagram</a>
     </div>
+
   </div>
 </body>
 </html>
